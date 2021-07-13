@@ -22,12 +22,10 @@ export default function PostPreview({ post }: PostPreviewProps) {
   const [session] = useSession();
   const router = useRouter();
 
-
   useEffect(() => {
     if (session?.activeSubscription) {
       router.push(`/posts/${post.slug}`);
     }
-
   }, [session])
 
   return (
@@ -62,7 +60,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
+    paths: [ ],
     fallback: 'blocking'
   }
 }
