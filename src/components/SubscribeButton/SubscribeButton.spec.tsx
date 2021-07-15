@@ -40,9 +40,9 @@ describe("SubscribeButton component", () => {
 
     useSessionMocked.mockReturnValueOnce([
       {
-        user: { 
-          name: "John Doe", 
-          email: "john.doe@example.com" 
+        user: {
+          name: "John Doe",
+          email: "john.doe@example.com",
         },
         activeSubscription: "fake-active-subscription",
         expires: "fake-expires",
@@ -60,6 +60,6 @@ describe("SubscribeButton component", () => {
 
     fireEvent.click(subscribeButton);
 
-    expect(pushMock).toHaveBeenCalled();
+    expect(pushMock).toHaveBeenCalledWith("/posts");
   });
 });
